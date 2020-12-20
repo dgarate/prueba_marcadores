@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bookmark Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bookmark</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookmark_categories.each do |bookmark_category| %>
+      <tr>
+        <td><%= bookmark_category.bookmark_id %></td>
+        <td><%= bookmark_category.category_id %></td>
+        <td><%= link_to 'Show', bookmark_category %></td>
+        <td><%= link_to 'Edit', edit_bookmark_category_path(bookmark_category) %></td>
+        <td><%= link_to 'Destroy', bookmark_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bookmark Category', new_bookmark_category_path %>

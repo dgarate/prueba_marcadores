@@ -31,6 +31,9 @@ class BookmarksController < ApplicationController
         bookmark_params[:type_ids].reject(&:empty?).each_with_index do |id|
           BookmarkType.create(bookmark_id: @bookmark.id, type_id: id)
         end
+        bookmark_params[:category_ids].reject(&:empty?).each_with_index do |id|
+          BookmarkCategory.create(bookmark_id: @bookmark.id, category_id: id)
+        end
         format.html { redirect_to @bookmark, notice: 'Bookmark was successfully created.' }
         format.json { render :show, status: :created, location: @bookmark }
       else
@@ -72,6 +75,6 @@ class BookmarksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bookmark_params
-      params.require(:bookmark).permit(:name, :url, type_ids:[])
+      params.require(:bookmark).permit(:name, :url, type_ids:[], category_ids:[])
     end
 end

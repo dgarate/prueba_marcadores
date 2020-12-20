@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :bookmark_categories
+  resources :categories
   resources :bookmark_types
   resources :types
   resources :bookmarks
