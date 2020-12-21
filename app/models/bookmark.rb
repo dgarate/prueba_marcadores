@@ -5,9 +5,7 @@ class Bookmark < ApplicationRecord
     has_many :categories, through: :bookmark_categories
 
 
-    def self.group_by_type
-        
-    end
+    
 
     def bookmark_category
         @bookmark_category = []

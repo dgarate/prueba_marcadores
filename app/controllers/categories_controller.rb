@@ -6,12 +6,21 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
 
-    
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @category = Category.find(params[:id])
+    
+    
+      if @category.public == true
+      render json: @category, include: :bookmarks
+      else
+     
+      render json: @category.errors, status: :unprocessable_entity 
+      end
+    
   end
 
   # GET /categories/new

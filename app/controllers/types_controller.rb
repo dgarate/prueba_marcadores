@@ -5,7 +5,7 @@ class TypesController < ApplicationController
   # GET /types.json
   def index
     @types = Type.all
-    # @bookmar_xx = Type.bookmarks_count
+   
   end
 
   # GET /types/1

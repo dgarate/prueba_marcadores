@@ -5,8 +5,6 @@ class Type < ApplicationRecord
     validates_uniqueness_of :name
     validates :name, presence: true
 
-    def self.bookmarks_count
-        Type.bookmarks.count
-    end
+    
 
 end
