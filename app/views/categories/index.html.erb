@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>id</th>
       <th>Name</th>
       <th>Public</th>
       <th>Parent category</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @categories.each do |category| %>
       <tr>
+        <td><%= category.id %></td>
         <td><%= category.name %></td>
         <td><%= category.public %></td>
         <td><%= category.parent_category_id %></td>

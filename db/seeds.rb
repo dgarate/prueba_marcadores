@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# ** Create Categories
+# 20.times do
+#     Category.create(name: Faker::Beer.name, 
+#                     public: rand(0..1), 
+#                     parent_category_id: rand(2..3)
+#                     )
+# end
+
+# Create Types
+
+Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort.each { |seed| load seed }
